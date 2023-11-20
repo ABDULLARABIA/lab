@@ -1,0 +1,10 @@
+C:\Users\aubh.lab\source\repos\studentRecord\studentRecord\bin\Debug\studentRecord.exe.config
+C:\Users\aubh.lab\source\repos\studentRecord\studentRecord\bin\Debug\studentRecord.exe
+C:\Users\aubh.lab\source\repos\studentRecord\studentRecord\bin\Debug\studentRecord.pdb
+C:\Users\aubh.lab\source\repos\studentRecord\studentRecord\obj\Debug\studentRecord.csproj.AssemblyReference.cache
+C:\Users\aubh.lab\source\repos\studentRecord\studentRecord\obj\Debug\studentRecord.studentGradeForm1.resources
+C:\Users\aubh.lab\source\repos\studentRecord\studentRecord\obj\Debug\studentRecord.Properties.Resources.resources
+C:\Users\aubh.lab\source\repos\studentRecord\studentRecord\obj\Debug\studentRecord.csproj.GenerateResource.cache
+C:\Users\aubh.lab\source\repos\studentRecord\studentRecord\obj\Debug\studentRecord.csproj.CoreCompileInputs.cache
+C:\Users\aubh.lab\source\repos\studentRecord\studentRecord\obj\Debug\studentRecord.exe
+C:\Users\aubh.lab\source\repos\studentRecord\studentRecord\obj\Debug\studentRecord.pdb

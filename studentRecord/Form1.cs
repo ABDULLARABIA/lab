@@ -7,14 +7,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.IO;
 namespace studentRecord
 {
-    public partial class Form1 : Form
+    public partial class studentGradeForm1 : Form
     {
-        public Form1()
+        public studentGradeForm1()
         {
             InitializeComponent();
+        }
+
+        private void studentGradeForm1_Load(object sender, EventArgs e)
+        {
+            StreamReader inFile;
+
+            inFile = File.OpenText(@"C:\Users\aubh.lab\Desktop\stIDs.txt");
+
+            while (!inFile.EndOfStream)
+            {
+                idsComboBox.Items.Add(inFile.ReadLine());
+            }
+            inFile.Close();
         }
     }
 }
