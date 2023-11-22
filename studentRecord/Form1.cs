@@ -19,15 +19,23 @@ namespace studentRecord
 
         private void studentGradeForm1_Load(object sender, EventArgs e)
         {
-            StreamReader inFile;
-
-            inFile = File.OpenText(@"C:\Users\aubh.lab\Desktop\stIDs.txt");
-
-            while (!inFile.EndOfStream)
+            try
             {
-                idsComboBox.Items.Add(inFile.ReadLine());
+                StreamReader inFile;
+
+                inFile = File.OpenText(@"C:\Users\aubh.lab\Desktop\stIDs.txt");
+
+                while (!inFile.EndOfStream)
+                {
+                    idsComboBox.Items.Add(inFile.ReadLine());
+                }
+                idsComboBox.Text = "Select";
+                inFile.Close();
             }
-            inFile.Close();
+            catch(Exception ex)
+            {
+                MessageBox.Show("error in opening the file","Error");
+            }
         }
     }
 }
