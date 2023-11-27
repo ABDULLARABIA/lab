@@ -18,9 +18,22 @@ namespace studentRecord
         {
             InitializeComponent();
         }
-
+        private void enableEntries(Boolean tf)
+        {
+            idsComboBox.Enabled = tf;
+            tbQuiz1.Enabled = tf;
+            tbQuiz2.Enabled = tf;
+            tbProject.Enabled = tf;
+            tbMajorTest.Enabled = tf;
+            tbFinalExam.Enabled = tf;
+            saveToolStripMenuItem.Enabled = tf;
+        }
         private void studentGradeForm1_Load(object sender, EventArgs e)
         {
+           
+            
+
+            
             try
             {
                 StreamReader inFile;
@@ -120,7 +133,20 @@ namespace studentRecord
             {
                 while (!inputFile.EndOfStream)
                 {
-                    lBoxStudentGradeReport.Items.Add(inputFile.ReadLine());
+                    String line = inputFile.ReadLine();
+                   String[] fields =  line.Split(',');
+                    double avg, majorTest, project,finalExam, total;
+                    avg = (double.Parse(fields[1]) + double.Parse(fields[2]) / 2);
+                    finalExam = double.Parse(fields[5]);
+                    majorTest = double.Parse(fields[4]);
+                    project = double.Parse(fields[3]);
+                    total = avg + finalExam + majorTest + project;
+                    lBoxStudentGradeReport.Items.Add("Student with ID " + fields[0] + " scored : ");
+                    lBoxStudentGradeReport.Items.Add(fields[5] + " in final exam");
+                    lBoxStudentGradeReport.Items.Add(fields[4] + " in midterm exam");
+                    lBoxStudentGradeReport.Items.Add(avg + " as average of quizes");
+                    lBoxStudentGradeReport.Items.Add(total + " /100");
+                    lBoxStudentGradeReport.Items.Add('\n');
                 }
             }
             catch
