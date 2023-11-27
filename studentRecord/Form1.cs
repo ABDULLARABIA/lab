@@ -30,9 +30,9 @@ namespace studentRecord
         }
         private void studentGradeForm1_Load(object sender, EventArgs e)
         {
-           
-            
 
+
+            enableEntries(false);
             
             try
             {
@@ -55,6 +55,7 @@ namespace studentRecord
 
         private void newToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            enableEntries(true);
             try
             {
                 if (saveFileDialog.ShowDialog() == DialogResult.OK)
@@ -70,6 +71,7 @@ namespace studentRecord
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            
             try
             {
                 if (studentGradesTabControl.SelectedTab == gradesTab)
@@ -77,6 +79,7 @@ namespace studentRecord
                     if (openFileDialog.ShowDialog() == DialogResult.OK)
                     {
                         outputFile = File.AppendText(openFileDialog.FileName);
+                        enableEntries(true);
                     }
                 }
                 else
@@ -116,9 +119,9 @@ namespace studentRecord
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+            enableEntries(false);
             outputFile.Close();
-            MessageBox.Show("The file is saved", "Saved");
+            MessageBox.Show("The file is saved", "Saved :D");
             tbQuiz1.Text = "";
             tbQuiz2.Text = "";
             tbProject.Text = "";
